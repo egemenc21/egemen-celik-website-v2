@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+* {
+  box-sizing: border-box;
+}
+
+@theme {
+  --color-primary: #A9170B;
+  --color-secondary: #FFFCE8;
+  --color-tertiary: #F5F5F5;
+  --color-accent: #FF6F61;
+
+  --text-4xl: 6rem;
+  --text-5xl: 7rem;
+}
+
+:root {
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-secondary);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-secondary);
+  }
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+}
+

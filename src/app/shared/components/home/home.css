@@ -1,0 +1,27 @@
+/* Creative Portfolio tasarımı için özel stiller */
+.creative-box {
+  position: relative;
+  display: inline-block;
+}
+
+.creative-box::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: 8px;
+  bottom: 8px;
+  border: 2px solid var(--color-secondary);
+  z-index: -1;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .text-8xl {
+    font-size: 4rem;
+  }
+  
+  .text-6xl {
+    font-size: 3rem;
+  }
+}
