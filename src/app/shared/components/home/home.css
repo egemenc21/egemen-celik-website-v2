@@ -1,27 +1,27 @@
-/* Creative Portfolio tasarımı için özel stiller */
-.creative-box {
-  position: relative;
-  display: inline-block;
+.animate-slide-down-1 {
+  animation: slideDownFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
 
-.creative-box::before {
-  content: '';
-  position: absolute;
-  top: -8px;
-  left: -8px;
-  right: 8px;
-  bottom: 8px;
-  border: 2px solid var(--color-secondary);
-  z-index: -1;
+.animate-slide-down-2 {
+  animation: slideDownFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
 }
 
-/* Responsive tasarım */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .text-8xl {
     font-size: 4rem;
   }
-  
+
   .text-6xl {
     font-size: 3rem;
   }
-}
+  
+  .animate-slide-down-1,
+  .animate-slide-down-2 {
+    animation-duration: 0.8s;
+  }
+} 

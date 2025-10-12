@@ -1,12 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
+import { NgClass, NgOptimizedImage } from '@angular/common';
+import { AnimateOnViewDirective } from '../../directives/animate-on-view.directive';
 
 @Component({
   selector: 'app-home',
-  standalone:true,
-  imports: [],
+  standalone: true,
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrl: './home.css',
 })
 export class Home {
+  isMobile: boolean = false;
+  screenWidth!: number;
 
+  isShown = signal(false);
+  egemenVisible: boolean = false;
+  celikVisible: boolean = false;
+
+  toggle() {
+    this.isShown.update((isShown) => !isShown);
+  }
+
+  ngOnInit() {
+    this.checkViewport();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkViewport();
+  }
+
+  private checkViewport() {
+    this.screenWidth = window.innerWidth;
+    this.isMobile = this.screenWidth < 768;
+  }
+  onTitleVisibilityChange(visible: boolean) {
+    this.celikVisible = visible;
+    this.egemenVisible = visible;
+  }
 }
