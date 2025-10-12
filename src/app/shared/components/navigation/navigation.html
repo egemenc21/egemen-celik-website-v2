@@ -1,5 +1,10 @@
-<nav class="absolute top-0 w-full p-4 border-b border-secondary z-120" [class.scrolled]="isScrolled" >
-  <div class="flex justify-between items-center text-sm tracking-wider px-4" >
+<nav class="fixed top-0 w-full p-4 border-b z-120 transition-colors duration-300" 
+     [ngClass]="{
+       'bg-primary text-secondary border-secondary': !isOnContentSection,
+       'bg-secondary text-primary border-primary': isOnContentSection,
+       'scrolled': isScrolled
+     }">
+  <div class="flex justify-between items-center text-sm tracking-wider px-4">
     <a routerLink="/" class="ml-2"> {{this.currentYear}}</a>
     <a routerLink="/" class="ml-2"> creative </a>
     <a routerLink="/" class="ml-2"> portfolio</a>

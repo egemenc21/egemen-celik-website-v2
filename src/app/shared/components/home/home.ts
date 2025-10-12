@@ -1,11 +1,12 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { AnimateOnViewDirective } from '../../directives/animate-on-view.directive';
+import { Content } from '../content/content';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

@@ -3,8 +3,9 @@ import { Injectable, signal, computed } from '@angular/core';
 export type ThemeColor = 'primary' | 'secondary';
 
 @Injectable({
-  providedIn: 'root'  // This makes it a singleton (like React Context)
+  providedIn: 'root'  
 })
+
 export class ThemeService {
   private _backgroundColor = signal<ThemeColor>('primary');
   private _textColor = signal<ThemeColor>('secondary')
