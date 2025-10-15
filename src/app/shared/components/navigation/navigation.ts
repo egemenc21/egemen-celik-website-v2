@@ -14,8 +14,9 @@ import { NgClass } from '@angular/common';
 })
 export class Navigation implements OnInit {
   isScrolled: boolean = false;
-  isOnContentSection: boolean = false;
+  isOnContentSection = false;
   currentYear = new Date().getFullYear();
+  isAboutMeSection = false;
 
   ngOnInit() {
     this.checkScrollPosition();
@@ -29,8 +30,10 @@ export class Navigation implements OnInit {
   private checkScrollPosition() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const viewportHeight = window.innerHeight;
-    
-    this.isOnContentSection = scrollPosition >= viewportHeight * 0.8; 
+    console.log(scrollPosition, viewportHeight);
+
+    this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95;
+    this.isOnContentSection = scrollPosition >= viewportHeight * 0.95 && !this.isAboutMeSection;
     this.isScrolled = scrollPosition > 50;
   }
 }
