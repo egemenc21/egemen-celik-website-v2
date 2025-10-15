@@ -3,11 +3,12 @@ import { NgClass, NgOptimizedImage } from '@angular/common';
 import { AnimateOnViewDirective } from '../../directives/animate-on-view.directive';
 import { Content } from '../content/content';
 import {AboutMeComponent} from '../about-me/about-me.component';
+import {VisionMissionComponent} from '../vision-mission/vision-mission.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

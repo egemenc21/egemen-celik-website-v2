@@ -10,9 +10,9 @@
 
   <div class="flex h-full">
     <div class="flex-1 relative">
-      <div class="flex flex-col w-full justify-center items-center md:absolute md:bottom-1 md:left-24 md:transform md:-translate-y-full md:items-start">
-        <h1 class="text-8xl font-bold tracking-wider text-secondary mb-2 animate-slide-down-1" [ngClass]="{'animate-slide-down-1': this.egemenVisible}" appAnimateOnView (isVisibleChange)="onTitleVisibilityChange($event)">CELIK</h1>
-        <h1 class="text-8xl font-bold tracking-wider text-secondary animate-slide-down-2" [ngClass]="{'animate-slide-down-2': this.celikVisible}"  appAnimateOnView (isVisibleChange)="onTitleVisibilityChange($event)">EGEMEN</h1>
+      <div class="flex flex-col w-full text-5xl justify-center items-center md:absolute md:bottom-1 md:left-24 md:transform md:-translate-y-full md:items-start">
+        <h1 class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-1" [ngClass]="{'animate-slide-down-1': this.egemenVisible}" appAnimateOnView (isVisibleChange)="onTitleVisibilityChange($event)">CELIK</h1>
+        <h1 class="font-bold tracking-wider text-secondary animate-slide-down-2" [ngClass]="{'animate-slide-down-2': this.celikVisible}"  appAnimateOnView (isVisibleChange)="onTitleVisibilityChange($event)">EGEMEN</h1>
       </div>
     </div>
 
@@ -26,3 +26,4 @@
 
 <app-content></app-content>
 <app-about-me></app-about-me>
+<app-vision-mission></app-vision-mission>
