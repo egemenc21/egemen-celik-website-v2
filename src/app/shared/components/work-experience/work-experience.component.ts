@@ -14,10 +14,15 @@ import {NgClass} from '@angular/common';
 export class WorkExperienceComponent {
   isExperienceHeaderVisible = false;
   isExperienceListVisible = false;
+  isWorkExperienceVisible: boolean = false;
+
   onExperienceHeaderVisibleChange(event: boolean) {
     this.isExperienceHeaderVisible = event;
   }
   onExperienceListVisibleChange(event: boolean) {
     this.isExperienceListVisible= event;
+  }
+  onWorkExperienceVisibleChange(event: boolean) {
+    this.isWorkExperienceVisible = event;
   }
 }

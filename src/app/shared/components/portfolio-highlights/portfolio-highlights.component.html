@@ -9,13 +9,12 @@
           <img ngSrc="assets/images/main.jpg" class="h-full object-cover" alt="Portfolio Image 2" width="1600" height="2400">
         </div>
       </div>
-      <div class="h-1/2 z-20 p-10" appAnimateOnView (isVisibleChange)="onPortfolioHighlightsChange($event)">
+      <div class="h-1/2 z-20 p-10" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onPortfolioHighlightsChange($event)">
         <h1 class="text-4xl"
         [ngClass]="{'animate-slide-down-1': isPortfolioHighlights}"
         >PORTFOLIO </h1>
         <h1 class="text-9xl" [ngClass]="{'animate-slide-down-2': isPortfolioHighlights}">HIGHLIGHTS</h1>
       </div>
-
     </div>
     <div class="w-1/2">
       <img ngSrc="assets/images/main.jpg" class="object-cover h-full" alt="Portfolio Image 3" width="1600" height="2400">

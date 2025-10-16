@@ -88,6 +88,6 @@
         </div>
       </div>
     </div>
-    <h2 class="text-8xl" [ngClass]="{'animate-slide-down-1':isExperienceListVisible}">WORK EXPERIENCE</h2>
+    <h2 class="text-8xl" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onWorkExperienceVisibleChange($event)" [ngClass]="{'animate-slide-down-1':isWorkExperienceVisible}">WORK EXPERIENCE</h2>
   </div>
 </section>
