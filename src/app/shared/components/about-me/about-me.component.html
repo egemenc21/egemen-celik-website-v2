@@ -7,8 +7,16 @@
 
     <div class="flex-4 h-full flex items-center justify-center relative">
       <h2 class="text-9xl text-right font-bold absolute whitespace-nowrap"
-          style="top: 50%; left: 5%; transform: translateY(-50%);">ABOUT ME</h2>
-      <p class="absolute p-8 text-sm" style="top: 60%">Hi, I’m Rachelle Beaudry, a passionate photographer dedicated to capturing life’s most genuine moments.
+          style="top: 40%; left: 5%; transform: translateY(-50%);" appAnimateOnView (isVisibleChange)="onAboutMeVisibleChange($event)"
+      [ngClass]="{
+      'animate-slide-down-1': isAboutMeVisible
+      }"
+      >ABOUT ME</h2>
+      <p class="absolute p-8 text-sm" style="top: 60%" appAnimateOnView (isVisibleChange)="onAboutMeParagraphVisibleChange($event)"
+         [ngClass]="{
+      'animate-slide-down-2': isAboutMeParagraphVisible
+      }"
+      >Hi, I’m Rachelle Beaudry, a passionate photographer dedicated to capturing life’s most genuine moments.
         I specialize in lifestyle photography, blending creativity and storytelling to create images that resonate.
         Every shot I take is a reflection of my commitment to authenticity, artistry, and emotion.</p>
     </div>
