@@ -1,6 +1,6 @@
 <nav class="fixed top-0 w-full p-4 border-b z-120 "
      [ngClass]="{
-       ' text-primary border-primary': isOnContentSection,
+       ' text-primary border-primary': isOnContentSection || isWorkExperienceSection,
        ' text-secondary border-secondary': isAboutMeSection,
        'scrolled': isScrolled
      }">
@@ -9,20 +9,5 @@
     <a routerLink="/" class="ml-2"> creative </a>
     <a routerLink="/" class="ml-2"> portfolio</a>
     <a routerLink="/" class="ml-2"> photography </a>
-
-    <!-- <button
-          class="mobile-toggle"
-          (click)="toggleMobile()"
-          [attr.aria-expanded]="isMobileMenuOpen">
-          <span class="hamburger"></span>
-        </button>
-
-        <ul class="nav-links" [class.active]="isMobileMenuOpen">
-          <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
-          <li><a routerLink="/about" routerLinkActive="active">About</a></li>
-          <li><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
-          <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
-          <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-        </ul> -->
   </div>
 </nav>

@@ -36,6 +36,11 @@ body {
   font-family: 'Anton', sans-serif;
 }
 
+ul, li,  p {
+  font-family: 'Chivo', sans-serif;
+}
+
+
 @keyframes slideDownFade {
   0% {
     opacity: 0;

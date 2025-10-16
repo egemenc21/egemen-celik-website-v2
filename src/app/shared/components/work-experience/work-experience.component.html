@@ -1,0 +1,74 @@
+<section class="h-screen bg-secondary text-primary">
+
+  <div class="flex flex-col justify-around h-full gap-5 p-5">
+    <div class="flex gap-5">
+      <div class="relative flex items-start">
+
+        <div class="absolute transform -translate-x-1/2 top-0 h-1/2 border-l-2 border-primary"></div>
+        <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
+        <div class="ml-8">
+          <div>
+            <h3 class="text-primary font-bold text-2xl tracking-wider" appAnimateOnView
+                (isVisibleChange)="onExperienceHeaderVisibleChange($event)"
+                [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}"
+            >FRONTEND DEVELOPER INTERN</h3>
+            <p class="text-primary text-sm italic" [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}">May
+              2023 – September 2023</p>
+            <p class="text-primary text-sm font-semibold"
+               [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}">ElephantApps — Istanbul, Turkey</p>
+          </div>
+
+
+          <ul class="list-disc ml-6 mt-2 text-primary text-sm leading-relaxed" appAnimateOnView
+              (isVisibleChange)="onExperienceListVisibleChange($event)"
+              [ngClass]="{'animate-slide-down-2':isExperienceListVisible}">
+            <li>Developed and maintained a fully dynamic company website using React, Tailwind, TypeScript, and
+              GatsbyJS.
+            </li>
+            <li>Built a custom CMS to enable non-developer content updates.</li>
+            <li>Contributed to the core component library with responsive, reusable components.</li>
+            <li>Collaborated with UX designers via Figma to deliver pixel-perfect features.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="relative flex items-start">
+
+        <div class="absolute transform -translate-x-1/2 top-0 h-full border-l-2 border-primary"></div>
+        <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
+
+        <div class="ml-8">
+          <h3 class="text-primary font-bold text-xl tracking-wider" appAnimateOnView
+              (isVisibleChange)="onExperienceHeaderVisibleChange($event)"
+              [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}" >SOFTWARE ENGINEER</h3>
+          <p class="text-primary italic"  [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}" >March 2024 – Present</p>
+          <p class="text-primary font-semibold tracking-wide"  [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}" >Octapull, Alpata Technology — Eskisehir, Turkey</p>
+
+          <ul class="list-disc ml-6 mt-2 text-primary text-sm leading-relaxed" [ngClass]="{'animate-slide-down-2':isExperienceListVisible}">
+            <li>Spearheaded development of OctaPull SFA, streamlining sales and invoice workflows for 250+ users
+              daily.
+            </li>
+            <li>Developed RESTful APIs using C# and ASP.NET Core for seamless web and mobile communication.</li>
+            <li>Redesigned OctaPull B2B’s payment infrastructure by integrating Garanti BBVA online payments and a new
+              "Pay at the Door" option.
+            </li>
+            <li>Built bi-directional integration between SFA and ERP systems (e.g., Logo) using custom API bridges and
+              background workers.
+            </li>
+            <li>Optimized Angular web app performance with lazy loading, code splitting, and server-side fetching (−40%
+              load time).
+            </li>
+            <li>Translated Figma designs and requirements into secure, scalable, and responsive Salesforce automation
+              features.
+            </li>
+            <li>Collaborated with mobile developers and product owners to launch new features on time.</li>
+            <li>Participated in code reviews and implemented unit/integration tests to ensure code quality and
+              reliability.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+    <h2 class="text-8xl" [ngClass]="{'animate-slide-down-1':isExperienceListVisible}" >WORK EXPERIENCE</h2>
+  </div>
+</section>

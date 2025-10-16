@@ -17,6 +17,7 @@ export class Navigation implements OnInit {
   isOnContentSection = false;
   currentYear = new Date().getFullYear();
   isAboutMeSection = false;
+  isWorkExperienceSection: boolean = false;
 
   ngOnInit() {
     this.checkScrollPosition();
@@ -30,10 +31,10 @@ export class Navigation implements OnInit {
   private checkScrollPosition() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const viewportHeight = window.innerHeight;
-    console.log(scrollPosition, viewportHeight);
 
-    this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95;
-    this.isOnContentSection = scrollPosition >= viewportHeight * 0.95 && !this.isAboutMeSection;
+    this.isOnContentSection = scrollPosition >= viewportHeight * 0.95 && scrollPosition < viewportHeight * 1.95;
+    this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95 && scrollPosition < viewportHeight * 3.90;
+    this.isWorkExperienceSection = scrollPosition >= viewportHeight * 3.90
     this.isScrolled = scrollPosition > 50;
   }
 }
