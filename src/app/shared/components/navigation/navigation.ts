@@ -18,6 +18,7 @@ export class Navigation implements OnInit {
   currentYear = new Date().getFullYear();
   isAboutMeSection = false;
   isWorkExperienceSection: boolean = false;
+  isPortfolioHighlightsSection: boolean = false;
 
   ngOnInit() {
     this.checkScrollPosition();
@@ -34,7 +35,8 @@ export class Navigation implements OnInit {
 
     this.isOnContentSection = scrollPosition >= viewportHeight * 0.95 && scrollPosition < viewportHeight * 1.95;
     this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95 && scrollPosition < viewportHeight * 3.90;
-    this.isWorkExperienceSection = scrollPosition >= viewportHeight * 3.90
+    this.isWorkExperienceSection = scrollPosition >= viewportHeight * 3.90 && scrollPosition < viewportHeight * 4.95;
+    this.isPortfolioHighlightsSection = scrollPosition >= viewportHeight * 4.95
     this.isScrolled = scrollPosition > 50;
   }
 }

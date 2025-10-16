@@ -5,11 +5,12 @@ import { Content } from '../content/content';
 import {AboutMeComponent} from '../about-me/about-me.component';
 import {VisionMissionComponent} from '../vision-mission/vision-mission.component';
 import {WorkExperienceComponent} from '../work-experience/work-experience.component';
+import {PortfolioHighlightsComponent} from '../portfolio-highlights/portfolio-highlights.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
