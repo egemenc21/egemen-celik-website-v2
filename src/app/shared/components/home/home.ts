@@ -6,11 +6,14 @@ import {AboutMeComponent} from '../about-me/about-me.component';
 import {VisionMissionComponent} from '../vision-mission/vision-mission.component';
 import {WorkExperienceComponent} from '../work-experience/work-experience.component';
 import {PortfolioHighlightsComponent} from '../portfolio-highlights/portfolio-highlights.component';
+import {ProjectsComponent} from '../projects/projects.component';
+import {SkillsComponent} from '../skills/skills.component';
+import {ContactComponent} from '../contact/contact.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent, ProjectsComponent, SkillsComponent, ContactComponent],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

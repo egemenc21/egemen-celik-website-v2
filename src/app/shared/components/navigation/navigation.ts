@@ -1,6 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { NgClass } from '@angular/common';
+import {Component, HostListener, OnInit} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-navigation',
@@ -14,11 +14,13 @@ import { NgClass } from '@angular/common';
 })
 export class Navigation implements OnInit {
   isScrolled: boolean = false;
-  isOnContentSection = false;
-  currentYear = new Date().getFullYear();
-  isAboutMeSection = false;
+  currentYear: number = new Date().getFullYear();
+  isAboutMeSection: boolean = false;
+  isContentSection: boolean = false;
   isWorkExperienceSection: boolean = false;
   isPortfolioHighlightsSection: boolean = false;
+  isSkillsSection: boolean = false;
+  isContactSection: boolean = false;
 
   ngOnInit() {
     this.checkScrollPosition();
@@ -33,10 +35,12 @@ export class Navigation implements OnInit {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     const viewportHeight = window.innerHeight;
 
-    this.isOnContentSection = scrollPosition >= viewportHeight * 0.95 && scrollPosition < viewportHeight * 1.95;
+    this.isContentSection = scrollPosition >= viewportHeight * 0.95 && scrollPosition < viewportHeight * 1.95;
     this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95 && scrollPosition < viewportHeight * 3.90;
     this.isWorkExperienceSection = scrollPosition >= viewportHeight * 3.90 && scrollPosition < viewportHeight * 4.95;
-    this.isPortfolioHighlightsSection = scrollPosition >= viewportHeight * 4.95
+    this.isPortfolioHighlightsSection = scrollPosition >= viewportHeight * 4.95 && scrollPosition < viewportHeight * 6.97;
+    this.isSkillsSection = scrollPosition >= viewportHeight * 6.97 && scrollPosition < viewportHeight * 7.97;
+    this.isContactSection = scrollPosition >= viewportHeight * 7.97
     this.isScrolled = scrollPosition > 50;
   }
 }
