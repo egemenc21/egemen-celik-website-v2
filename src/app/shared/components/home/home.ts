@@ -1,4 +1,4 @@
-import { Component, HostListener, signal } from '@angular/core';
+import {Component, HostListener, OnInit, signal} from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { AnimateOnViewDirective } from '../../directives/animate-on-view.directive';
 import { Content } from '../content/content';
@@ -17,17 +17,12 @@ import {ContactComponent} from '../contact/contact.component';
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
-export class Home {
+export class Home implements OnInit {
   isMobile: boolean = false;
   screenWidth!: number;
 
-  isShown = signal(false);
   egemenVisible: boolean = false;
   celikVisible: boolean = false;
-
-  toggle() {
-    this.isShown.update((isShown) => !isShown);
-  }
 
   ngOnInit() {
     this.checkViewport();
