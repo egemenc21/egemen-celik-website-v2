@@ -1,7 +1,7 @@
-<section id="portfolio-highlights" class="h-screen bg-primary text-secondary">
-  <div class="flex h-full justify-center">
-    <div class="flex flex-col w-1/2 max-h-screen">
-      <div class="flex max-md:w-full h-1/2">
+<section id="portfolio-highlights" class="min-h-screen bg-primary text-secondary">
+  <div class="flex flex-col md:flex-row md:h-screen h-full justify-center pb-4">
+    <div class="flex flex-col md:w-1/2 max-h-screen h-full">
+      <div class="flex h-1/2">
         <div class="md:w-1/2 h-full">
           <img ngSrc="assets/images/main.jpg" class="h-full object-cover" alt="Portfolio Image 1" width="1600" height="2400">
         </div>
@@ -9,15 +9,15 @@
           <img ngSrc="assets/images/main.jpg" class="h-full object-cover" alt="Portfolio Image 2" width="1600" height="2400">
         </div>
       </div>
-      <div class="h-1/2 z-20 p-10" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onPortfolioHighlightsChange($event)">
+      <div class="md:h-1/2 z-20 p-10" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onPortfolioHighlightsChange($event)">
         <h1 class="text-3xl md:text-4xl"
         [ngClass]="{'animate-slide-down-1': isPortfolioHighlights}"
         >PORTFOLIO </h1>
-        <h1 class="text-7xl md:text-9xl" [ngClass]="{'animate-slide-down-2': isPortfolioHighlights}">HIGHLIGHTS</h1>
+        <h1 class="text-4xl sm:text-5xl md:text-9xl" [ngClass]="{'animate-slide-down-2': isPortfolioHighlights}">HIGHLIGHTS</h1>
       </div>
     </div>
-<!--    <div class="w-1/2">-->
-<!--      <img ngSrc="assets/images/main.jpg" class="object-cover h-full" alt="Portfolio Image 3" width="1600" height="2400">-->
-<!--    </div>-->
+    <div class="w-full md:w-1/2">
+      <img ngSrc="assets/images/main.jpg" class="object-cover h-full" alt="Portfolio Image 3" width="1600" height="2400">
+    </div>
   </div>
 </section>

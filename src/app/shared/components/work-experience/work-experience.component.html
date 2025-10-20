@@ -2,7 +2,7 @@
 
   <div class="flex max-md:flex-col-reverse flex-col justify-around h-full gap-6 md:gap-10 p-5 pt-20">
     <div class="flex max-md:flex-col flex-wrap max-md:gap-8">
-      <div class="relative flex items-start basis-1/2 text-justify px-8">
+      <div class="relative flex items-start basis-1/2 px-8">
 
         <div class="absolute transform -translate-x-1/2 top-0 h-full md:h-1/2 border-l-2 border-primary"></div>
         <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
@@ -20,7 +20,7 @@
           </div>
 
 
-          <ul class="list-disc ml-6 mt-2 text-primary text-sm leading-relaxed" appAnimateOnView
+          <ul class="list-disc ml-6 mt-2 text-primary text-sm text-justify leading-relaxed" appAnimateOnView
               (isVisibleChange)="onExperienceListVisibleChange($event)"
           >
             <li [ngClass]="{'animate-slide-down-2':isExperienceListVisible}" class="animate-delay-1">Developed and
@@ -39,7 +39,7 @@
           </ul>
         </div>
       </div>
-      <div class="relative flex items-start basis-1/2 text-justify px-8">
+      <div class="relative flex items-start basis-1/2 px-8">
 
         <div class="absolute transform -translate-x-1/2 top-0 h-full border-l-2 border-primary"></div>
         <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
@@ -55,7 +55,7 @@
              [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}">Octapull, Alpata Technology — Eskisehir,
             Turkey</p>
 
-          <ul class="list-disc ml-6 mt-2 text-primary text-sm leading-relaxed">
+          <ul class="list-disc ml-6 mt-2 text-primary text-justify text-sm leading-relaxed">
             <li [ngClass]="{'animate-slide-down-2':isExperienceListVisible}" class="animate-delay-1">Spearheaded
               development of OctaPull SFA, streamlining sales and invoice workflows for 250+ users
               daily.

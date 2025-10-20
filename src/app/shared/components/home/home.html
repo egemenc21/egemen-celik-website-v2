@@ -10,7 +10,7 @@
 
   <div class="flex flex-col-reverse gap-8 pt-16 md:pt-0 md:flex-row h-full">
     <div class="flex-1 relative">
-      <div class="flex flex-col w-full text-3xl md:text-5xl justify-center items-center md:absolute md:bottom-1 md:left-24 md:transform md:-translate-y-full md:items-start">
+      <div class="flex flex-col w-full text-4xl md:text-5xl justify-center items-center md:absolute md:bottom-1 md:left-24 md:transform md:-translate-y-full md:items-start pb-8">
         <h1 class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-1" [ngClass]="{'animate-slide-down-1': this.egemenVisible}" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onTitleVisibilityChange($event)">CELIK</h1>
         <h1 class="font-bold tracking-wider text-secondary animate-slide-down-2" [ngClass]="{'animate-slide-down-2': this.celikVisible}"  appAnimateOnView [animateOnce]="true" (isVisibleChange)="onTitleVisibilityChange($event)">EGEMEN</h1>
       </div>
