@@ -1,14 +1,15 @@
-<section id='work-experience' class="h-screen bg-secondary text-primary">
+<section id='work-experience' class="md:min-h-screen bg-secondary text-primary">
 
-  <div class="flex flex-col justify-around h-full gap-5 p-5">
-    <div class="flex gap-5">
-      <div class="relative flex items-start">
+  <div class="flex max-md:flex-col-reverse flex-col justify-around h-full gap-6 md:gap-10 p-5 pt-20">
+    <div class="flex max-md:flex-col flex-wrap max-md:gap-8">
+      <div class="relative flex items-start basis-1/2 text-justify px-8">
 
-        <div class="absolute transform -translate-x-1/2 top-0 h-1/2 border-l-2 border-primary"></div>
+        <div class="absolute transform -translate-x-1/2 top-0 h-full md:h-1/2 border-l-2 border-primary"></div>
         <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
         <div class="ml-8">
           <div>
             <h3 class="text-primary font-bold text-2xl tracking-wider" appAnimateOnView
+                [animateOnce]="true"
                 (isVisibleChange)="onExperienceHeaderVisibleChange($event)"
                 [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}"
             >FRONTEND DEVELOPER INTERN</h3>
@@ -38,13 +39,14 @@
           </ul>
         </div>
       </div>
-      <div class="relative flex items-start">
+      <div class="relative flex items-start basis-1/2 text-justify px-8">
 
         <div class="absolute transform -translate-x-1/2 top-0 h-full border-l-2 border-primary"></div>
         <div class="absolute transform -translate-x-1/2 -top-2 w-4 h-4 bg-primary rounded-full"></div>
 
         <div class="ml-8">
           <h3 class="text-primary font-bold text-xl tracking-wider animate-delay-1" appAnimateOnView
+              [animateOnce]="true"
               (isVisibleChange)="onExperienceHeaderVisibleChange($event)"
               [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}">SOFTWARE ENGINEER</h3>
           <p class="text-primary italic" [ngClass]="{'animate-slide-down-1':isExperienceHeaderVisible}">March 2024 –
@@ -88,6 +90,8 @@
         </div>
       </div>
     </div>
-    <h2 class="text-8xl" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onWorkExperienceVisibleChange($event)" [ngClass]="{'animate-slide-down-1':isWorkExperienceVisible}">WORK EXPERIENCE</h2>
+
+    <h2 class="text-3xl md:text-7xl" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onWorkExperienceVisibleChange($event)"
+        [ngClass]="{'animate-slide-down-1':isWorkExperienceVisible}">WORK EXPERIENCE</h2>
   </div>
 </section>
