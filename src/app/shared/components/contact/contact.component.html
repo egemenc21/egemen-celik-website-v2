@@ -1,20 +1,43 @@
-<section id="contact" class="h-screen bg-primary text-secondary">
-  <div class="flex h-full">
-    <div class="w-1/2">
-      <img ngSrc="assets/images/contact.jpg" class="h-full object-cover cursor-pointer" alt="Contact Image"
-           width="799" height="800">
-    </div>
-    <div class="flex flex-col justify-around items-center w-1/2 py-10">
+<section id="contact" class="min-h-screen bg-primary text-secondary flex flex-col md:flex-row">
+  <!-- IMAGE -->
+  <div class="w-full md:w-1/2">
+    <img
+      ngSrc="assets/images/contact.jpg"
+      alt="Contact Image"
+      width="799"
+      height="800"
+      class="h-64 sm:h-80 md:h-full w-full object-cover cursor-pointer"
+    />
+  </div>
 
-      <div class="flex flex-col">
-        <div class="flex justify-between mb-2"><span>{{ phone }}</span><span>{{ email }}</span></div>
-        <h2 class="text-7xl uppercase text-center">
-          CONTACT
-        </h2>
+  <!-- CONTENT -->
+  <div
+    class="flex flex-col justify-around items-center w-full md:w-1/2 py-10 px-6 text-center md:text-left"
+  >
+    <div class="flex flex-col gap-4 w-full">
+      <!-- CONTACT INFO -->
+      <div class="flex flex-col sm:flex-row justify-between text-base sm:text-lg mb-4">
+        <a
+          href="tel:{{ phone }}"
+          class="mb-2 sm:mb-0 decoration-secondary hover:text-secondary/80 transition-colors no-underline"
+        >
+          {{ phone }}
+        </a>
+        <a
+          href="mailto:{{ email }}"
+          class="decoration-secondary hover:text-secondary/80 transition-colors"
+        >
+          {{ email }}
+        </a>
       </div>
 
-      <h6 class="uppercase text-xl">Let’s create something beautiful together.</h6>
-
+      <!-- TITLE -->
+      <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase text-center">CONTACT</h2>
     </div>
+
+    <!-- SUBTEXT -->
+    <h6 class="uppercase text-lg sm:text-xl md:text-2xl mt-6">
+      Let’s create something beautiful together.
+    </h6>
   </div>
 </section>
