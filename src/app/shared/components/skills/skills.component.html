@@ -9,61 +9,27 @@
       </h2>
     </div>
 
-    <!-- LANGUAGES -->
-    <div class="flex flex-col md:flex-row gap-4 items-center md:items-end">
-      <img ngSrc="assets/images/main.jpg"
-           alt="Portfolio Image 2"
-           width="1600" height="2400"
-           class="w-full md:w-1/2 h-64 md:h-full object-cover rounded-xl cursor-pointer" />
-      <div class="flex flex-col w-full md:w-1/2 gap-3 text-center md:text-left">
-        <h4 class="text-2xl md:text-3xl font-semibold">LANGUAGES</h4>
-        <ul class="space-y-1">
-          <li>C#</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+    @for (category of skillCategories; track category.title) {
+      <div
+        class="flex flex-col md:flex-row gap-4 items-center md:items-end"
+      >
+        <img
+          [ngSrc]="category.image"
+          [alt]="category.alt"
+          [width]="category.width"
+          [height]="category.height"
+          class="w-full md:w-1/2 h-64 md:h-full object-cover rounded-xl cursor-pointer"
+        />
+        <div class="flex flex-col w-full md:w-1/2 gap-3 text-center md:text-left">
+          <h4 class="text-2xl md:text-3xl font-semibold">{{ category.title }}</h4>
+          <ul class="space-y-1">
+            @for (skill of category.skills; track skill){
+              <li>{{ skill }}</li>
+            }
+          </ul>
+        </div>
       </div>
-    </div>
-
-    <!-- FRAMEWORKS -->
-    <div class="flex flex-col md:flex-row gap-4 items-center md:items-end">
-      <img ngSrc="assets/images/main.jpg"
-           alt="Portfolio Image 2"
-           width="1600" height="2400"
-           class="w-full md:w-1/2 h-64 md:h-full object-cover rounded-xl cursor-pointer" />
-      <div class="flex flex-col w-full md:w-1/2 gap-3 text-center md:text-left">
-        <h4 class="text-2xl md:text-3xl font-semibold">FRAMEWORKS</h4>
-        <ul class="space-y-1">
-          <li>ASP.NET Core</li>
-          <li>React</li>
-          <li>Angular</li>
-          <li>Node.js</li>
-          <li>Tailwind</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- DATABASE & TOOLS -->
-    <div class="flex flex-col md:flex-row gap-4 items-center md:items-end">
-      <img ngSrc="assets/images/main.jpg"
-           alt="Portfolio Image 2"
-           width="1600" height="2400"
-           class="w-full md:w-1/2 h-64 md:h-full object-cover rounded-xl cursor-pointer" />
-      <div class="flex flex-col w-full md:w-1/2 gap-3 text-center md:text-left">
-        <h4 class="text-2xl md:text-3xl font-semibold">DATABASE & TOOLS</h4>
-        <ul class="space-y-1">
-          <li>MSSQL</li>
-          <li>MongoDB</li>
-          <li>Git</li>
-          <li>AWS</li>
-          <li>Docker</li>
-          <li>CI/CD</li>
-          <li>Agile</li>
-        </ul>
-      </div>
-    </div>
+    }
 
   </div>
 </section>

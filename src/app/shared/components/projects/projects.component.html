@@ -1,55 +1,60 @@
 <section class="min-h-screen md:h-screen bg-primary text-secondary">
   <div
     class="h-full grid gap-4 py-4
-           grid-cols-1 sm:grid-cols-2 md:grid-cols-3
-           grid-rows-auto md:grid-rows-6"
+               grid-cols-1 sm:grid-cols-2 md:grid-cols-3
+               grid-rows-auto md:grid-rows-6"
   >
-    <img
-      ngSrc="assets/images/campTraveller.png"
-      class="w-full h-64 sm:h-80 md:h-full row-span-6 object-cover cursor-pointer"
-      alt="Portfolio Image 1"
-      width="1920"
-      height="4879"
-    >
+    @for (project of projects; track project.image; ) {
+      <div
+        [class]="'relative w-full h-64 sm:h-80 md:h-full ' + project.rowSpan + ' overflow-hidden group cursor-pointer'"
+      >
+        <img
+          [ngSrc]="project.image"
+          [class]="'w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 ' + (project.objectPosition || '')"
+          [alt]="project.alt"
+          [width]="project.width"
+          [height]="project.height"
+        >
 
-    <img
-      ngSrc="assets/images/mern-chat.png"
-      class="w-full h-64 sm:h-80 md:h-full row-span-2 object-cover cursor-pointer"
-      alt="Portfolio Image 2"
-      width="1919"
-      height="1080"
-    >
+        <!-- Overlay -->
+        <div
+          class="absolute inset-0 group-hover:bg-black/50 bg-opacity-0 transition-all duration-500 flex items-center justify-center gap-6">
+          <a
+            [href]="project.githubUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg
+                     opacity-0 group-hover:opacity-100
+                     translate-y-8 group-hover:translate-y-0
+                     transition-all duration-500 ease-out
+                     hover:bg-gray-200 hover:scale-110
+                     font-medium"
+            style="transition-delay: 100ms"
+          >
+            <lucide-icon [img]="GithubIcon" [size]="20"></lucide-icon>
+            <span>GitHub</span>
+          </a>
 
-    <img
-      ngSrc="assets/images/mcp-irail-image.png"
-      class="w-full h-64 sm:h-80 md:h-full row-span-3 object-cover object-top cursor-pointer"
-      alt="Portfolio Image 2"
-      width="732"
-      height="897"
-    >
+          @if (project.liveUrl) {
+            <a
+              [href]="project.liveUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 px-6 py-3 bg-secondary text-primary rounded-lg
+                     opacity-0 group-hover:opacity-100
+                     translate-y-8 group-hover:translate-y-0
+                     transition-all duration-500 ease-out
+                     hover:bg-opacity-90 hover:scale-110
+                     font-medium"
+              style="transition-delay: 200ms"
+            >
+              <lucide-icon [img]="ExternalLinkIcon" [size]="20"></lucide-icon>
+              <span>Live</span>
+            </a>
+          }
+        </div>
+      </div>
 
-    <img
-      ngSrc="assets/images/main.jpg"
-      class="w-full h-64 sm:h-80 md:h-full row-span-2 object-cover cursor-pointer"
-      alt="Portfolio Image 4"
-      width="1600"
-      height="2400"
-    >
-
-    <img
-      ngSrc="assets/images/main.jpg"
-      class="w-full h-64 sm:h-80 md:h-full row-span-3 object-cover cursor-pointer"
-      alt="Portfolio Image 5"
-      width="1600"
-      height="2400"
-    >
-
-    <img
-      ngSrc="assets/images/main.jpg"
-      class="w-full h-64 sm:h-80 md:h-full row-span-2 object-cover cursor-pointer"
-      alt="Portfolio Image 6"
-      width="1600"
-      height="2400"
-    >
+    }
   </div>
 </section>
