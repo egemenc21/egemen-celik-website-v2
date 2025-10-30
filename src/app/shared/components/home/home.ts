@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit, signal} from '@angular/core';
+import {Component, effect, HostListener, inject, OnInit, signal} from '@angular/core';
 import { NgClass, NgOptimizedImage } from '@angular/common';
 import { AnimateOnViewDirective } from '../../directives/animate-on-view.directive';
 import { Content } from '../content/content';
@@ -10,6 +10,7 @@ import {ProjectsComponent} from '../projects/projects.component';
 import {SkillsComponent} from '../skills/skills.component';
 import {ContactComponent} from '../contact/contact.component';
 import {SectionObserverDirective} from '../../directives/section-observer.directive';
+import {StrapiService} from '../../../core/services/strapi-service';
 
 @Component({
   selector: 'app-home',
@@ -25,8 +26,19 @@ export class Home implements OnInit {
   egemenVisible: boolean = false;
   celikVisible: boolean = false;
 
-  ngOnInit() {
+  name:string = 'Egemen';
+  surname:string = 'Celik';
+
+  strapiService = inject(StrapiService);
+
+  async ngOnInit() {
+    console.log(await this.strapiService.getHomeData())
     this.checkViewport();
+    const homeResponse= await this.strapiService.getHomeData();
+    debugger
+    this.name = homeResponse.data.name;
+    this.surname = homeResponse.data.surname;
+
   }
 
   @HostListener('window:resize')

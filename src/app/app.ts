@@ -16,6 +16,4 @@ export class App {
   protected readonly title = signal('egemen-celik-website-v2');
   themeService = inject(ThemeService)
 
-  test(){
-  }
 }

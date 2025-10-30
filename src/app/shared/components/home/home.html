@@ -7,7 +7,7 @@
     <!-- baslik -->
     <div class="">
       <div
-        class="flex flex-col w-full text-4xl md:text-8xl justify-center items-center md:absolute md:bottom-1/4 md:left-24 md:transform md:items-start pb-8"
+        class="flex flex-col w-full uppercase text-4xl md:text-8xl justify-center items-center md:absolute md:bottom-1/4 md:left-24 md:transform md:items-start pb-8"
       >
         <h1
           class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-1"
@@ -16,7 +16,7 @@
           [animateOnce]="true"
           (isVisibleChange)="onTitleVisibilityChange($event)"
         >
-          CELIK
+          {{this.surname}}
         </h1>
         <h1
           class="font-bold tracking-wider text-secondary animate-slide-down-2"
@@ -25,7 +25,7 @@
           [animateOnce]="true"
           (isVisibleChange)="onTitleVisibilityChange($event)"
         >
-          EGEMEN
+          {{this.name}}
         </h1>
       </div>
     </div>
