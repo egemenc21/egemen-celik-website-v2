@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
+import {SectionObserverDirective} from '../../directives/section-observer.directive';
 
 @Component({
   selector: 'app-contact',
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    SectionObserverDirective
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'

@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {AnimateOnViewDirective} from '../../directives/animate-on-view.directive';
 import {NgClass} from '@angular/common';
+import {SectionObserverDirective} from '../../directives/section-observer.directive';
 
 @Component({
   selector: 'app-work-experience',
   imports: [
     AnimateOnViewDirective,
-    NgClass
+    NgClass,
+    SectionObserverDirective
   ],
   templateUrl: './work-experience.component.html',
   styleUrl: './work-experience.component.css'

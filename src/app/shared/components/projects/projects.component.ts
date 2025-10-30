@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {CommonModule, NgForOf, NgIf, NgOptimizedImage} from '@angular/common';
 import { LucideAngularModule, Github, ExternalLink } from 'lucide-angular';
+import {SectionObserverDirective} from '../../directives/section-observer.directive';
 
 interface Project {
   image: string;
@@ -17,7 +18,7 @@ interface Project {
 @Component({
   selector: 'app-projects',
   imports: [
-    NgOptimizedImage, LucideAngularModule, CommonModule
+    NgOptimizedImage, LucideAngularModule, CommonModule, SectionObserverDirective
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css'

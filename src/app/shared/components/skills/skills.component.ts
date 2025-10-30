@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgOptimizedImage} from "@angular/common";
+import {SectionObserverDirective} from '../../directives/section-observer.directive';
 
 interface SkillCategory {
   title: string;
@@ -13,9 +14,10 @@ interface SkillCategory {
 
 @Component({
   selector: 'app-skills',
-    imports: [
-        NgOptimizedImage
-    ],
+  imports: [
+    NgOptimizedImage,
+    SectionObserverDirective
+  ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css'
 })

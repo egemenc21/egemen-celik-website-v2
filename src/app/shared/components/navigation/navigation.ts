@@ -1,46 +1,67 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {Component, effect, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {NgClass} from '@angular/common';
+import {SectionTrackerService} from '../../../core/services/section-service'
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [
-    RouterLink,
-    NgClass
-  ],
+  imports: [RouterLink, NgClass],
   templateUrl: './navigation.html',
   styleUrl: './navigation.css'
 })
-export class Navigation implements OnInit {
+export class Navigation implements OnInit, OnDestroy {
   isScrolled: boolean = false;
   currentYear: number = new Date().getFullYear();
-  isAboutMeSection: boolean = false;
-  isContentSection: boolean = false;
-  isWorkExperienceSection: boolean = false;
-  isPortfolioHighlightsSection: boolean = false;
-  isSkillsSection: boolean = false;
-  isContactSection: boolean = false;
+  activeSection: string = 'home';
+  private subscription?: Subscription;
+
+  constructor(private sectionTracker: SectionTrackerService) {
+    effect(() => {
+      console.log(sectionTracker.getCurrentSection(), 'sectionTracker')
+      this.activeSection = sectionTracker.getCurrentSection();
+    });
+  }
 
   ngOnInit() {
-    this.checkScrollPosition();
+  }
+
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
   @HostListener('window:scroll', [])
   onScroll() {
-    this.checkScrollPosition();
+    this.isScrolled = window.scrollY > 50;
   }
 
-  private checkScrollPosition() {
-    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    const viewportHeight = window.innerHeight;
+  get isAboutMeSection() {
+    return this.activeSection === 'about-me';
+  }
 
-    this.isContentSection = scrollPosition >= viewportHeight * 0.95 && scrollPosition < viewportHeight * 1.95;
-    this.isAboutMeSection = scrollPosition >= viewportHeight * 1.95 && scrollPosition < viewportHeight * 3.97;
-    this.isWorkExperienceSection = scrollPosition >= viewportHeight * 3.97 && scrollPosition < viewportHeight * 4.95;
-    this.isPortfolioHighlightsSection = scrollPosition >= viewportHeight * 4.95 && scrollPosition < viewportHeight * 6.97;
-    this.isSkillsSection = scrollPosition >= viewportHeight * 6.97 && scrollPosition < viewportHeight * 7.97;
-    this.isContactSection = scrollPosition >= viewportHeight * 7.97
-    this.isScrolled = scrollPosition > 50;
+  get isContentSection() {
+    return this.activeSection === 'content';
+  }
+
+  get isWorkExperienceSection() {
+    return this.activeSection === 'work-experience';
+  }
+
+  get isProjectsSection() {
+    return this.activeSection === 'projects';
+  }
+
+  get isPortfolioHighlightsSection() {
+    return this.activeSection === 'portfolio-highlights';
+  }
+
+  get isSkillsSection() {
+    return this.activeSection === 'skills';
+  }
+
+  get isContactSection() {
+    return this.activeSection === 'contact';
   }
 }

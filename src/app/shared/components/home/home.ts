@@ -9,11 +9,12 @@ import {PortfolioHighlightsComponent} from '../portfolio-highlights/portfolio-hi
 import {ProjectsComponent} from '../projects/projects.component';
 import {SkillsComponent} from '../skills/skills.component';
 import {ContactComponent} from '../contact/contact.component';
+import {SectionObserverDirective} from '../../directives/section-observer.directive';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent, ProjectsComponent, SkillsComponent, ContactComponent],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent, ProjectsComponent, SkillsComponent, ContactComponent, SectionObserverDirective],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
