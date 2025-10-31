@@ -5,6 +5,7 @@ import {lastValueFrom} from 'rxjs';
 import {StrapiBaseModel, StrapiGenericResponse} from '../interfaces/strapi-base-response';
 import {ContentModel} from '../interfaces/content';
 import {AboutMeModel} from '../interfaces/about-me';
+import {VisionMissionModel} from '../interfaces/vision-mission';
 
 interface HomeModel extends StrapiBaseModel{
   name: string;
@@ -32,4 +33,7 @@ export class StrapiService {
     return lastValueFrom(this.httpClient.get<StrapiGenericResponse<AboutMeModel>>(`${this.base}/api/about-me`));
   }
 
+  getVisionMissionData(){
+    return lastValueFrom(this.httpClient.get<StrapiGenericResponse<VisionMissionModel[]>>(`${this.base}/api/vision-missions`));
+  }
 }

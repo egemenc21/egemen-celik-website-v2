@@ -6,35 +6,30 @@
           [ngClass]="{
       'animate-slide-down-1':isVisionVisible
       }" [animateOnce]="true">
-        VISION</h1>
+        {{vision()?.title}}</h1>
       <div class="border-b flex flex-col md:w-2/3 justify-end pb-5 mb-2 text-justify" appAnimateOnView
            [ngClass]="{
       'animate-slide-down-1':isVisionVisible
       }
       ">
-        <p class="max-md:text-sm">To capture the essence of life’s moments, turning them into timeless visual stories
-          that inspire, connect,
-          and preserve memories for generations.</p>
+        <p class="max-md:text-sm">{{vision()?.description}}</p>
       </div>
     </div>
     <div class="flex justify-center items-center md:justify-end w-full sm:max-md:w-3/4">
-      <div class="border-b flex flex-col md:justify-end pb-5 mb-2 gap-5" [ngClass]="{
+      <div class=" flex flex-col xl:items-end md:justify-end pb-5 mb-2 gap-5" [ngClass]="{
       'animate-slide-down-2':isMissionVisible
       }">
-        <h1 class="text-4xl sm:text-7xl text-end md:text-10xl uppercase max-md:text-center" appAnimateOnView
+
+        <h1 class="text-4xl sm:text-7xl text-end md:text-10xl uppercase max-md:text-center xl:w-1/2" appAnimateOnView
             [animateOnce]="true"
             (isVisibleChange)="onMissionVisibleChange($event)"
         >
-          MISSION</h1>
-        <ul class="max-md:text-sm" [ngClass]="{
+          {{mission()?.title}}</h1>
+        <p class="max-md:text-sm text-justify xl:w-1/2 border-b pb-5" [ngClass]="{
       'animate-slide-down-2':isMissionVisible
       }">
-          <li class="text-justify">To provide exceptional photography services that blend creativity, emotion, and
-            authenticity.
-          </li>
-          <li class="text-justify">To collaborate with clients to bring their vision to life</li>
-          <li class="text-justify">Creating meaningful and impactful visuals.</li>
-        </ul>
+            {{mission()?.description}}
+        </p>
       </div>
     </div>
   </div>
