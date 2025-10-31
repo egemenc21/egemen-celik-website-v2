@@ -10,14 +10,12 @@
       [ngClass]="{
       'animate-slide-down-1': isAboutMeVisible
       }"
-      >ABOUT ME</h2>
+      >{{aboutMeData()?.title}}</h2>
       <p class="sm:absolute p-4 text-justify sm:p-8 text-sm sm:top-[60%]" appAnimateOnView (isVisibleChange)="onAboutMeParagraphVisibleChange($event)"
          [ngClass]="{
       'animate-slide-down-2': isAboutMeParagraphVisible
       }"
-      >Hi, I’m Rachelle Beaudry, a passionate photographer dedicated to capturing life’s most genuine moments.
-        I specialize in lifestyle photography, blending creativity and storytelling to create images that resonate.
-        Every shot I take is a reflection of my commitment to authenticity, artistry, and emotion.</p>
+      >{{aboutMeData()?.description}}</p>
     </div>
 
     <div class="h-1/2 sm:h-full flex-4">

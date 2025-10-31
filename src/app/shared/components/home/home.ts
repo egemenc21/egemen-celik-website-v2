@@ -32,12 +32,13 @@ export class Home implements OnInit {
   strapiService = inject(StrapiService);
 
   async ngOnInit() {
-    console.log(await this.strapiService.getHomeData())
     this.checkViewport();
     const homeResponse= await this.strapiService.getHomeData();
     debugger
     this.name = homeResponse.data.name;
     this.surname = homeResponse.data.surname;
+
+    console.log(await this.strapiService.getContentData(),'content')
 
   }
 

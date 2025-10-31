@@ -1,44 +1,48 @@
 <section appSectionObserver sectionId="home" id="home" class="relative h-screen overflow-hidden">
   <div class="absolute inset-0">
-    @if (!isMobile){
-    <!--dikey-->
-    <div class="absolute left-20 top-0 h-full border-l border-secondary"></div>
+    @if (!isMobile) {
+      <!--dikey-->
+      <div class="absolute left-20 top-0 h-full border-l border-secondary"></div>
 
-    <!-- baslik -->
-    <div class="">
-      <div
-        class="flex flex-col w-full uppercase text-4xl md:text-8xl justify-center items-center md:absolute md:bottom-1/4 md:left-24 md:transform md:items-start pb-8"
-      >
-        <h1
-          class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-1"
-          [ngClass]="{ 'animate-slide-down-1': this.egemenVisible }"
-          appAnimateOnView
-          [animateOnce]="true"
-          (isVisibleChange)="onTitleVisibilityChange($event)"
+      <!-- baslik -->
+      <div class="">
+        <div
+          class="flex flex-col w-full uppercase text-4xl md:text-8xl justify-center items-center md:absolute md:bottom-1/4 md:left-24 md:transform md:items-start pb-8"
         >
-          {{this.surname}}
-        </h1>
-        <h1
-          class="font-bold tracking-wider text-secondary animate-slide-down-2"
-          [ngClass]="{ 'animate-slide-down-2': this.celikVisible }"
-          appAnimateOnView
-          [animateOnce]="true"
-          (isVisibleChange)="onTitleVisibilityChange($event)"
-        >
-          {{this.name}}
-        </h1>
+          <h1
+            class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-1"
+            [ngClass]="{ 'animate-slide-down-1': this.egemenVisible }"
+            appAnimateOnView
+            [animateOnce]="true"
+            (isVisibleChange)="onTitleVisibilityChange($event)"
+          >
+            {{ this.surname }}
+          </h1>
+          <h1
+            class="font-bold tracking-wider text-secondary animate-slide-down-2"
+            [ngClass]="{ 'animate-slide-down-2': this.celikVisible }"
+            appAnimateOnView
+            [animateOnce]="true"
+            (isVisibleChange)="onTitleVisibilityChange($event)"
+          >
+            {{ this.name }}
+          </h1>
+        </div>
       </div>
-    </div>
-    <!--yatay-->
-    <div class="absolute bottom-1/4 left-0 w-full border-t border-secondary"></div>
+      <!--yatay-->
+      <div class="absolute bottom-1/4 left-0 w-full border-t border-secondary"></div>
     }
   </div>
 
   <div class="flex flex-col-reverse gap-8 pt-16 md:pt-0 md:flex-row h-full">
     <div class="flex-1 relative">
       <div class="flex flex-col w-full text-7xl justify-center items-center pb-8 md:hidden gap-2">
-        <h1 class="font-bold tracking-wider text-secondary animate-slide-down-1" [ngClass]="{'animate-slide-down-1': this.celikVisible}"  appAnimateOnView [animateOnce]="true" (isVisibleChange)="onTitleVisibilityChange($event)">EGEMEN</h1>
-        <h1 class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-2" [ngClass]="{'animate-slide-down-2': this.egemenVisible}" appAnimateOnView [animateOnce]="true" (isVisibleChange)="onTitleVisibilityChange($event)">CELIK</h1>
+        <h1 class="font-bold tracking-wider text-secondary animate-slide-down-1"
+            [ngClass]="{'animate-slide-down-1': this.celikVisible}" appAnimateOnView [animateOnce]="true"
+            (isVisibleChange)="onTitleVisibilityChange($event)">EGEMEN</h1>
+        <h1 class="font-bold tracking-wider text-secondary mb-2 animate-slide-down-2"
+            [ngClass]="{'animate-slide-down-2': this.egemenVisible}" appAnimateOnView [animateOnce]="true"
+            (isVisibleChange)="onTitleVisibilityChange($event)">CELIK</h1>
       </div>
     </div>
 
