@@ -18,21 +18,23 @@
 
         <div
           class="absolute inset-0 group-hover:bg-black/50 bg-opacity-0 transition-all duration-500 flex items-center justify-center gap-6">
-          <a
-            [href]="project.githubUrl"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg
-                     opacity-0 group-hover:opacity-100
-                     translate-y-8 group-hover:translate-y-0
-                     transition-all duration-500 ease-out
-                     hover:bg-gray-200 hover:scale-110
-                     font-medium"
-            style="transition-delay: 100ms"
-          >
-            <lucide-icon [img]="GithubIcon" [size]="20"></lucide-icon>
-            <span>GitHub</span>
-          </a>
+          @if (project.githubUrl) {
+            <a
+              [href]="project.githubUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-2 px-6 py-3 bg-white text-black rounded-lg
+                       opacity-0 group-hover:opacity-100
+                       translate-y-8 group-hover:translate-y-0
+                       transition-all duration-500 ease-out
+                       hover:bg-gray-200 hover:scale-110
+                       font-medium"
+              style="transition-delay: 100ms"
+            >
+              <lucide-icon [img]="GithubIcon" [size]="20"></lucide-icon>
+              <span>GitHub</span>
+            </a>
+          }
 
           @if (project.liveUrl) {
             <a

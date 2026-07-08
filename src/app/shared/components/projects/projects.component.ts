@@ -10,7 +10,7 @@ interface Project {
   height: number;
   rowSpan: string;
   objectPosition?: string;
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl?: string;
 }
 
@@ -31,6 +31,14 @@ export class ProjectsComponent {
   // Projects data
   projects: Project[] = [
     {
+      image: 'assets/images/connectCloud.png',
+      alt: 'ConnectCloud - Multi-Platform E-Commerce SaaS',
+      width: 1600,
+      height: 1000,
+      rowSpan: 'row-span-3',
+      liveUrl: 'https://connectcloud.com.tr'
+    },
+    {
       image: 'assets/images/campTraveller.png',
       alt: 'Camp Traveller',
       width: 1920,
@@ -44,7 +52,7 @@ export class ProjectsComponent {
       alt: 'Crown Clothing',
       width: 1850,
       height: 1574,
-      rowSpan: 'row-span-4',
+      rowSpan: 'row-span-3',
       githubUrl: 'https://github.com/egemenc21/crwn-clothing-e-commerce',
       liveUrl: 'https://fanciful-syrniki-5664a9.netlify.app/'
     },
@@ -53,7 +61,7 @@ export class ProjectsComponent {
       alt: 'MCP iRail',
       width: 732,
       height: 897,
-      rowSpan: 'row-span-3',
+      rowSpan: 'row-span-2',
       objectPosition: 'object-top',
       githubUrl: 'https://github.com/egemenc21/i-rail-mcp',
     },
@@ -62,7 +70,7 @@ export class ProjectsComponent {
       alt: 'Tricount Replica',
       width: 1017,
       height: 969,
-      rowSpan: 'row-span-3',
+      rowSpan: 'row-span-2',
       objectPosition: 'object-top',
       githubUrl: 'https://github.com/egemenc21/tricount-replica-app',
       liveUrl: 'https://main--aquamarine-empanada-f3b8ca.netlify.app/'

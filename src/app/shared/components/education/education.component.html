@@ -1,0 +1,18 @@
+<section id="education" appSectionObserver sectionId="education" class="min-h-screen bg-primary text-secondary flex items-center">
+  <div class="flex flex-col md:flex-row w-full items-center justify-around gap-10 px-5 md:px-20 py-24 md:py-0">
+    <h2 class="text-4xl md:text-9xl" appAnimateOnView [animateOnce]="true"
+        (isVisibleChange)="onEducationHeaderVisibleChange($event)"
+        [ngClass]="{'animate-slide-down-1': isEducationHeaderVisible}">EDUCATION</h2>
+
+    <div class="flex flex-col gap-3 max-w-xl border-l-2 border-secondary pl-8" appAnimateOnView
+         [animateOnce]="true"
+         (isVisibleChange)="onEducationDetailVisibleChange($event)"
+         [ngClass]="{'animate-slide-down-2': isEducationDetailVisible}">
+      <h3 class="text-2xl md:text-3xl font-bold tracking-wide">BACHELOR OF ENGINEERING</h3>
+      <p class="text-lg md:text-xl font-semibold tracking-wide">Computer Engineering</p>
+      <p class="italic">September 2020 – January 2025</p>
+      <p class="font-semibold tracking-wide">Eskisehir Technical University — Eskisehir, Turkey</p>
+      <p>GPA: 3.39 / 4.0</p>
+    </div>
+  </div>
+</section>

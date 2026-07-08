@@ -49,6 +49,10 @@ export class Navigation implements OnInit, OnDestroy {
     return this.activeSection === 'work-experience';
   }
 
+  get isEducationSection() {
+    return this.activeSection === 'education';
+  }
+
   get isProjectsSection() {
     return this.activeSection === 'projects';
   }

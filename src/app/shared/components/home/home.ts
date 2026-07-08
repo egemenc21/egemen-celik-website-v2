@@ -5,6 +5,7 @@ import { Content } from '../content/content';
 import {AboutMeComponent} from '../about-me/about-me.component';
 import {VisionMissionComponent} from '../vision-mission/vision-mission.component';
 import {WorkExperienceComponent} from '../work-experience/work-experience.component';
+import {EducationComponent} from '../education/education.component';
 import {PortfolioHighlightsComponent} from '../portfolio-highlights/portfolio-highlights.component';
 import {ProjectsComponent} from '../projects/projects.component';
 import {SkillsComponent} from '../skills/skills.component';
@@ -14,7 +15,7 @@ import {SectionObserverDirective} from '../../directives/section-observer.direct
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, PortfolioHighlightsComponent, ProjectsComponent, SkillsComponent, ContactComponent, SectionObserverDirective],
+  imports: [NgOptimizedImage, AnimateOnViewDirective, NgClass, Content, AboutMeComponent, VisionMissionComponent, WorkExperienceComponent, EducationComponent, PortfolioHighlightsComponent, ProjectsComponent, SkillsComponent, ContactComponent, SectionObserverDirective],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

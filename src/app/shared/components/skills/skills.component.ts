@@ -29,7 +29,7 @@ export class SkillsComponent {
       alt: 'Programming Languages',
       width: 1600,
       height: 2400,
-      skills: ['C#', 'JavaScript', 'TypeScript', 'HTML', 'CSS']
+      skills: ['C#', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL/PLSQL']
     },
     {
       title: 'FRAMEWORKS',
@@ -37,7 +37,7 @@ export class SkillsComponent {
       alt: 'Development Frameworks',
       width: 1600,
       height: 2400,
-      skills: ['ASP.NET Core', 'React', 'Angular', 'Node.js', 'Tailwind']
+      skills: ['Angular', 'React', 'Node.js', 'ASP.NET Core', 'Tailwind']
     },
     {
       title: 'DATABASE & TOOLS',
@@ -45,7 +45,7 @@ export class SkillsComponent {
       alt: 'Database and Development Tools',
       width: 1600,
       height: 2400,
-      skills: ['MSSQL', 'MongoDB', 'Git', 'AWS', 'Docker', 'CI/CD', 'Agile']
+      skills: ['MSSQL', 'PostgreSQL', 'Oracle DB', 'Git', 'AWS', 'Docker', 'CI/CD', 'Agile', 'Azure DevOps', 'TFS']
     }
   ];
 }
